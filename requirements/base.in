@@ -17,3 +17,4 @@ pycrypto==2.6.1
 pymongo==3.9.0                      # Needed for the mongo_* modules (playbooks/library/mongo_*)
 PyYAML
 requests==2.20.0
+psycopg2
