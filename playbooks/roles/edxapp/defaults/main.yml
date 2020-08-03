@@ -85,6 +85,7 @@ EDXAPP_MONGO_LMS_READ_PREFERENCE: 'SECONDARY_PREFERRED'
 EDXAPP_LMS_DRAFT_DOC_STORE_READ_PREFERENCE: '{{ EDXAPP_MONGO_CMS_READ_PREFERENCE }}'
 EDXAPP_LMS_SPLIT_DOC_STORE_READ_PREFERENCE: '{{ EDXAPP_MONGO_LMS_READ_PREFERENCE }}'
 
+EDXAPP_DATABASE_ENGINE: "{{ EDXAPP_DATABASE_ENGINE }}"
 EDXAPP_MYSQL_DB_NAME: 'edxapp'
 EDXAPP_MYSQL_USER: 'edxapp001'
 EDXAPP_MYSQL_USER_ADMIN: 'root'
@@ -1142,7 +1143,7 @@ edxapp_databases:
 # will ensure that any DB not named read_replica will be migrated
 # for both the lms and cms.
   read_replica:
-    ENGINE: 'django.db.backends.mysql'
+    ENGINE: "{{ EDXAPP_DATABASE_ENGINE }}"
     NAME: "{{ EDXAPP_MYSQL_REPLICA_DB_NAME }}"
     USER: "{{ EDXAPP_MYSQL_REPLICA_USER }}"
     PASSWORD: "{{ EDXAPP_MYSQL_REPLICA_PASSWORD }}"
@@ -1151,7 +1152,7 @@ edxapp_databases:
     CONN_MAX_AGE: "{{ EDXAPP_MYSQL_CONN_MAX_AGE }}"
     OPTIONS: "{{ EDXAPP_MYSQL_REPLICA_OPTIONS }}"
   default:
-    ENGINE: 'django.db.backends.mysql'
+    ENGINE: "{{ EDXAPP_DATABASE_ENGINE }}"
     NAME: "{{ EDXAPP_MYSQL_DB_NAME }}"
     USER: "{{ EDXAPP_MYSQL_USER }}"
     PASSWORD: "{{ EDXAPP_MYSQL_PASSWORD }}"
@@ -1161,7 +1162,7 @@ edxapp_databases:
     CONN_MAX_AGE: "{{ EDXAPP_MYSQL_CONN_MAX_AGE }}"
     OPTIONS: "{{ EDXAPP_MYSQL_OPTIONS }}"
   student_module_history:
-    ENGINE: 'django.db.backends.mysql'
+    ENGINE: "{{ EDXAPP_DATABASE_ENGINE }}"
     NAME: "{{ EDXAPP_MYSQL_CSMH_DB_NAME }}"
     USER: "{{ EDXAPP_MYSQL_CSMH_USER }}"
     PASSWORD: "{{ EDXAPP_MYSQL_CSMH_PASSWORD }}"

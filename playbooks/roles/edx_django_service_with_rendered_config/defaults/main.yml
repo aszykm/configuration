@@ -119,6 +119,7 @@ edx_django_service_with_rendered_config_caches:
     KEY_PREFIX: '{{ edx_django_service_with_rendered_config_service_name }}'
     LOCATION: '{{ edx_django_service_with_rendered_config_memcache }}'
 
+edx_django_service_with_rendered_config_default_db_engine: 'django.db.backends.mysql'
 edx_django_service_with_rendered_config_default_db_host: 'localhost'
 edx_django_service_with_rendered_config_default_db_name: '{{ edx_django_service_with_rendered_config_service_name }}'
 edx_django_service_with_rendered_config_default_db_atomic_requests: false
@@ -131,7 +132,7 @@ edx_django_service_with_rendered_config_db_options:
 
 edx_django_service_with_rendered_config_databases:
   default:
-    ENGINE: 'django.db.backends.mysql'
+    ENGINE: '{{ edx_django_service_with_rendered_config_default_db_engine }}'
     NAME: '{{ edx_django_service_with_rendered_config_default_db_name }}'
     USER: '{{ edx_django_service_with_rendered_config_db_user }}'
     PASSWORD: '{{ edx_django_service_with_rendered_config_db_password }}'
