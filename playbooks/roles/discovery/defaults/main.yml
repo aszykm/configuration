@@ -39,6 +39,7 @@ discovery_debian_pkgs:
 DISCOVERY_NGINX_PORT: "1{{ discovery_gunicorn_port }}"
 DISCOVERY_SSL_NGINX_PORT: "4{{ discovery_gunicorn_port }}"
 
+DISCOVERY_DB_ENGINE: 'django.db.backends.mysql'
 DISCOVERY_DEFAULT_DB_NAME: 'discovery'
 DISCOVERY_MYSQL: 'localhost'
 DISCOVERY_DATABASE_PORT: '3306'

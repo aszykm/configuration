@@ -38,6 +38,7 @@ dependencies:
     edx_django_service_staticfiles_storage: '{{ DISCOVERY_STATICFILES_STORAGE }}'
     edx_django_service_media_storage_backend: '{{ DISCOVERY_MEDIA_STORAGE_BACKEND }}'
     edx_django_service_memcache: '{{ DISCOVERY_MEMCACHE }}'
+    edx_django_service_default_db_engine: '{{ DISCOVERY_DB_ENGINE }}'
     edx_django_service_default_db_host: '{{ DISCOVERY_MYSQL }}'
     edx_django_service_default_db_port: '{{ DISCOVERY_DATABASE_PORT }}'
     edx_django_service_default_db_name: '{{ DISCOVERY_DEFAULT_DB_NAME }}'
