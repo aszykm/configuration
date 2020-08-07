@@ -118,8 +118,9 @@ edx_django_service_caches:
     KEY_PREFIX: '{{ edx_django_service_name }}'
     LOCATION: '{{ edx_django_service_memcache }}'
 
-edx_django_service_default_db_engine: 'django.db.backends.mysql'
+edx_django_service_default_db_engine: '{{ edx_django_service_default_db_engine }}'
 edx_django_service_default_db_host: 'localhost'
+edx_django_service_default_db_port: '3306'
 edx_django_service_default_db_name: '{{ edx_django_service_name }}'
 edx_django_service_default_db_atomic_requests: false
 edx_django_service_default_db_conn_max_age: 60
@@ -136,7 +137,7 @@ edx_django_service_databases:
     USER: '{{ edx_django_service_db_user }}'
     PASSWORD: '{{ edx_django_service_db_password }}'
     HOST: '{{ edx_django_service_default_db_host }}'
-    PORT: '3306'
+    PORT: '{{ edx_django_service_default_db_port }}'
     ATOMIC_REQUESTS: '{{ edx_django_service_default_db_atomic_requests }}'
     CONN_MAX_AGE: '{{ edx_django_service_default_db_conn_max_age }}'
     OPTIONS: '{{ edx_django_service_db_options }}'
