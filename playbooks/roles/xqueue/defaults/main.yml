@@ -47,6 +47,7 @@ XQUEUE_DJANGO_USERS:
   lms: 'password'
 XQUEUE_LANG: 'en_US.UTF-8'
 
+XQUEUE_DATABASE_ENGINE: 'django.db.backends.mysql'
 XQUEUE_MYSQL_DB_NAME: 'xqueue'
 XQUEUE_MYSQL_USER: 'xqueue001'
 XQUEUE_MYSQL_PASSWORD: 'password'
@@ -106,7 +107,7 @@ XQUEUE_CONFIG:
   USERS: "{{ XQUEUE_DJANGO_USERS }}"
   DATABASES:
     default:
-      ENGINE: "django.db.backends.mysql"
+      ENGINE: "{{ XQUEUE_DATABASE_ENGINE }}"
       NAME: "{{ XQUEUE_MYSQL_DB_NAME }}"
       USER: "{{ XQUEUE_MYSQL_USER }}"
       PASSWORD: "{{ XQUEUE_MYSQL_PASSWORD }}"
