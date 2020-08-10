@@ -143,7 +143,7 @@ edx_django_service_databases:
     PORT: '{{ edx_django_service_default_db_port }}'
     ATOMIC_REQUESTS: '{{ edx_django_service_default_db_atomic_requests }}'
     CONN_MAX_AGE: '{{ edx_django_service_default_db_conn_max_age }}'
-    OPTIONS: '{% if edx_django_service_default_db_engine == "django.db.backends.mysql" %} {{ edx_django_service_db_options_mysql }} {% else %} {{ edx_django_service_db_options_default }} {% endif %} '
+    OPTIONS: '{{ edx_django_service_db_options_default }}'
 
 edx_django_service_social_auth_edx_oidc_key: '{{ edx_django_service_name }}-key'
 edx_django_service_social_auth_edx_oidc_secret: '{{ edx_django_service_name }}-secret'
