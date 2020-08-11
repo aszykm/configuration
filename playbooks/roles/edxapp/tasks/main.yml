@@ -106,6 +106,27 @@
     - install
     - install:base
 
+- name: Add PostgreSQL repository
+  apt_repository:
+    repo: "{{ edxapp_postgresql_repo }}"
+    state: present
+  when: EDXAPP_DATABASE_ENGINE == "django.db.backends.postgresql"
+
+- name: Add PostgreSQL reposity key
+  apt_key:
+    url: "{{ edxapp_postgresql_key }}"
+    state: present
+  when: EDXAPP_DATABASE_ENGINE == "django.db.backends.postgresql"
+
+- name: Install dev packege for PostgreSQL
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - "{{ edxapp_postgresql_packages }}"
+  when: EDXAPP_DATABASE_ENGINE == "django.db.backends.postgresql"
+
 - name: set up edxapp .npmrc
   template:
     src: .npmrc.j2
