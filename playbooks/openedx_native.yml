@@ -68,7 +68,7 @@
     - role: insights
       when: SANDBOX_ENABLE_INSIGHTS
     # not ready yet: - edx_notes_api
-    - demo
+    # - demo
     - oauth_client_setup
     - oraclejdk
     - role: elasticsearch
